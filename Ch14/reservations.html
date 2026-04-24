@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pacific Trails Resort :: Reservations</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="pacific.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <h1>
+    <a href="index.html">Pacific Trails Resort</a>
+  </h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="yurts.html">Yurts</a></li>
+    <li><a href="activities.html">Activities</a></li>
+    <li><a href="reservations.html">Reservations</a></li>
+  </ul>
+</nav>
+
+<div id="wrapper">
+  <div id="reshero"></div>
+
+  <main>
+    <h2>Reservations at Pacific Trails</h2>
+    <h3>Contact Us</h3>
+    <p>Required fields are marked with an asterisk *.</p>
+
+   <form method="post" action="https://webdevbasics.net/scripts/pacific.php">
+  <label for="myFName">*First Name:</label>
+  <input type="text" name="First Name" id="myFName" maxlength="30" required>
+
+  <label for="myLName">*Last Name:</label>
+  <input type="text" name="Last Name" id="myLName" maxlength="30" required>
+
+  <label for="myStreet1">*Street Address 1:</label>
+  <input type="text" name="Street 1" id="myStreet1" maxlength="50" required>
+
+  <label for="myStreet2">Street 2:</label>
+  <input type="text" name="Street 2" id="myStreet2" maxlength="50">
+
+  <label for="myCity">*City:</label>
+  <input type="text" name="City" id="myCity" maxlength="30" required>
+
+  <label for="myState">*State:</label>
+  <input type="text" name="State" id="myState" maxlength="2">
+
+  <label for="myZip">*Zip Code:</label>
+  <input type="text" name="Zip Code" id="myZip" maxlength="10" required>
+
+  <label for="myEmail">*E-mail:</label>
+  <input type="email" name="Email" id="myEmail" maxlength="40" required>
+
+  <label for="myPhone">*Phone:</label>
+  <input type="tel" name="Phone" id="myPhone" minlength="10" maxlength="10" required>
+
+  <label for="myDate">*Arrival Date:</label>
+  <input type="date" name="Arrival Date" id="myDate" required>
+
+  <label for="myDepartureDate">Departure Date:</label>
+  <input type="date" name="Departure Date" id="myDepartureDate">
+
+  <label for="myNights">*Nights from 1 to 14:</label>
+  <input type="number" name="Nights" id="myNights" min="1" max="14" required>
+
+  <label for="myComments">Comments:</label>
+  <textarea name="Comments" id="myComments" rows="2" cols="20" maxlength="200"></textarea>
+
+  <input type="submit" id="mySubmit" value="Submit">
+</form>
+  </main>
+
+  <footer>
+    Copyright &copy; 2025 Pacific Trails Resort <br>
+    <a href="mailto:joel@example.com">joel@example.com</a>
+  </footer>
+</div>
+</body>
+</html>
+
+
+
