@@ -5,6 +5,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="pacific.css" rel="stylesheet">
+<script>
+function validateForm() {
+if (document.forms[0].userName.value == "" ) {
+    alert("Name field cannot be empty.");
+    return false;
+} // end if
+if (document.forms[0].userAge.value < 18) {
+    alert("Age is less than 18. You are not an adult.");
+    return false;
+} // end if
+alert("Name and Age are valid.");
+return true;
+} // end function validateForm
+</script>
 </head>
 <body>
 <header>
