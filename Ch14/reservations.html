@@ -7,15 +7,15 @@
 <link href="pacific.css" rel="stylesheet">
 <script>
 function validateForm() {
-if (document.forms[0].userName.value == "" ) {
-    alert("Name field cannot be empty.");
+if (document.forms[0].myPhone.value == "" ) {
+    alert("Phone field cannot be empty.");
     return false;
 } // end if
-if (document.forms[0].userAge.value < 18) {
-    alert("Age is less than 18. You are not an adult.");
+if (document.forms[0].myNights.value > 14) {
+    alert("Nights is more than 14 YOu  can't stay more than two weeks.");
     return false;
 } // end if
-alert("Name and Age are valid.");
+alert("Phone & Nights valid.");
 return true;
 } // end function validateForm
 </script>
@@ -44,7 +44,8 @@ return true;
     <h3>Contact Us</h3>
     <p>Required fields are marked with an asterisk *.</p>
 
-   <form method="post" action="https://webdevbasics.net/scripts/pacific.php">
+   <form method="post" action="https://webdevbasics.net/scripts/pacific.php"
+    onsubmit="return validateForm();">
   <label for="myFName">*First Name:</label>
   <input type="text" name="First Name" id="myFName" maxlength="30" required>
 
@@ -70,7 +71,7 @@ return true;
   <input type="email" name="Email" id="myEmail" maxlength="40" required>
 
   <label for="myPhone">*Phone:</label>
-  <input type="tel" name="Phone" id="myPhone" minlength="10" maxlength="10" required>
+  <input type="tel" name="Phone" id="myPhone" minlength="10" maxlength="10">
 
   <label for="myDate">*Arrival Date:</label>
   <input type="date" name="Arrival Date" id="myDate" required>
@@ -79,7 +80,7 @@ return true;
   <input type="date" name="Departure Date" id="myDepartureDate">
 
   <label for="myNights">*Nights from 1 to 14:</label>
-  <input type="number" name="Nights" id="myNights" min="1" max="14" required>
+  <input type="number" name="Nights" id="myNights" min="1" required>
 
   <label for="myComments">Comments:</label>
   <textarea name="Comments" id="myComments" rows="2" cols="20" maxlength="200"></textarea>
