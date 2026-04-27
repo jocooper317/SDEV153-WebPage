@@ -182,8 +182,11 @@ textarea {
 }
 
 video {
-    float: right;
-    margin: 2em;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1em auto;
+    float: none;
 }
 
 @media (min-width: 600px) {
@@ -247,6 +250,12 @@ video {
     input[type="submit"] {
         grid-column: 2 / 3;
         width: 9em;
+    }
+
+    video {
+        float: right;
+        margin: 2em;
+        max-width: 320px;
     }
 }
 
