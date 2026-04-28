@@ -6,7 +6,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="pacific.css" rel="stylesheet">
 <script>
-
+function validateForm(){
+  const phoneNumber = document.getElementById("myPhone").value;
+  const regex = /^\d{3}-\d{3}-\d{4}$/;
+ 
+  if ( regex.test(phoneNumber)) {
+    return true;
+  } else {
+    alert("Invalid phone number: Phone number must include - and be in this format 123-456-6789"
+    );
+    return false;
+  }
+}
 </script>
 </head>
 <body>
@@ -60,7 +71,7 @@
   <input type="email" name="Email" id="myEmail" maxlength="40" required>
 
   <label for="myPhone">*Phone:</label>
-  <input type="tel" name="Phone" id="myPhone" minlength="10" maxlength="10">
+  <input type="tel" name="Phone" id="myPhone" minlength="10" maxlength="12">
 
   <label for="myDate">*Arrival Date:</label>
   <input type="date" name="Arrival Date" id="myDate" required>
