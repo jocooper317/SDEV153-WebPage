@@ -20,6 +20,25 @@ header {
   text-align: center;
   padding: 2em 1em;
   border-bottom: 3px solid #8b5a2b;
+  position: relative;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-logo {
+  position: absolute;
+  left: 2em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.header-text {
+  text-align: center;
 }
 
 header h1 {
@@ -64,16 +83,14 @@ nav a:hover {
   color: #d6a15c;
 }
 
-/* Hero Image Placeholder */
+/* Hero Image Section */
 
 .hero {
   height: 280px;
   background-color: #444444;
-  background-image: url("../IronHideLeatherBckgrnd.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   border-bottom: 3px solid #8b5a2b;
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,7 +98,16 @@ nav a:hover {
   color: #f5f0e6;
 }
 
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 .hero h2 {
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.65);
   color: #d6a15c;
   padding: 0.6em 1em;
@@ -115,6 +141,34 @@ h3 {
 
 ul {
   padding-left: 1.5em;
+}
+
+/* About Page Columns */
+
+.about-columns {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+
+.about-columns section {
+  flex: 1;
+  background-color: #1f1f1f;
+  padding: 1.5em;
+  border: 1px solid #8b5a2b;
+  border-radius: 6px;
+  margin-bottom: 0;
+}
+
+.about-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border: 1px solid #8b5a2b;
+  border-radius: 6px;
+  margin-bottom: 1em;
 }
 
 /* Forms */
@@ -190,6 +244,16 @@ footer p {
 @media screen and (max-width: 600px) {
   header {
     padding: 1.5em 1em;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .site-logo {
+    position: static;
+    transform: none;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 0.8em;
   }
 
   header h1 {
@@ -209,6 +273,12 @@ footer p {
     height: 200px;
   }
 
+  .hero img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
   .hero h2 {
     font-size: 1.2em;
     margin: 1em;
@@ -217,6 +287,15 @@ footer p {
   main {
     width: 100%;
     padding: 1em;
+  }
+
+  .about-columns {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .about-image {
+    height: 200px;
   }
 
   form {
