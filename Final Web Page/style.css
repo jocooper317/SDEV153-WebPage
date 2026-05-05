@@ -1,107 +1,232 @@
+/* Iron Hide Leather Works CSS */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  background-color: #1c1c1c;
+  color: #f5f0e6;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #1f1f1f;
-  color: #f5f5f5;
   line-height: 1.6;
 }
 
+/* Header */
+
 header {
-  background-color: #2b2b2b;
+  background-color: #111111;
+  color: #d6a15c;
   text-align: center;
-  padding: 20px;
+  padding: 2em 1em;
+  border-bottom: 3px solid #8b5a2b;
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2.4em;
+  letter-spacing: 2px;
 }
 
 header p {
-  margin: 8px 0 0 0;
+  margin: 0.5em 0 0;
+  color: #f5f0e6;
 }
 
+/* Navigation */
+
 nav {
-  background-color: #111;
+  background-color: #333333;
+  border-bottom: 3px solid #8b5a2b;
 }
 
 nav ul {
-  list-style: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 nav li {
-  border-top: 1px solid #333;
+  display: inline-block;
 }
 
 nav a {
   display: block;
+  color: #f5f0e6;
   text-decoration: none;
-  color: #f5f5f5;
-  padding: 14px;
-  text-align: center;
+  font-weight: bold;
+  padding: 1em 1.2em;
 }
 
 nav a:hover {
-  background-color: #444;
+  background-color: #111111;
+  color: #d6a15c;
 }
 
+/* Hero Image Placeholder */
+
+.hero {
+  height: 280px;
+  background-color: #444444;
+  background-image: url("../IronHideLeatherBckgrnd.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 3px solid #8b5a2b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #f5f0e6;
+}
+
+.hero h2 {
+  background-color: rgba(0, 0, 0, 0.65);
+  color: #d6a15c;
+  padding: 0.6em 1em;
+  border: 1px solid #8b5a2b;
+}
+
+/* Main Content */
+
 main {
+  width: 90%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
-  background-color: #2f2f2f;
+  background-color: #2b2b2b;
+  padding: 2em;
+  min-height: 400px;
 }
 
 section {
-  margin-bottom: 25px;
+  margin-bottom: 2em;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+h2 {
+  color: #d6a15c;
+  border-bottom: 2px solid #8b5a2b;
+  padding-bottom: 0.3em;
 }
+
+h3 {
+  color: #c58b4c;
+}
+
+ul {
+  padding-left: 1.5em;
+}
+
+/* Forms */
+
+form {
+  background-color: #1f1f1f;
+  padding: 1.5em;
+  border: 1px solid #8b5a2b;
+  border-radius: 8px;
+  max-width: 600px;
+}
+
+label {
+  display: block;
+  margin-top: 1em;
+  font-weight: bold;
+  color: #d6a15c;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.7em;
+  margin-top: 0.3em;
+  border: 1px solid #555555;
+  border-radius: 4px;
+  background-color: #f5f0e6;
+  color: #111111;
+  font-size: 1em;
+}
+
+textarea {
+  height: 120px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  width: auto;
+  background-color: #8b5a2b;
+  color: #ffffff;
+  border: none;
+  padding: 0.8em 1.2em;
+  margin-top: 1em;
+  margin-right: 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #d6a15c;
+  color: #111111;
+}
+
+/* Footer */
 
 footer {
-  background-color: #111;
+  background-color: #111111;
+  color: #f5f0e6;
   text-align: center;
-  padding: 15px;
+  font-size: 0.9em;
+  padding: 1em;
+  border-top: 3px solid #8b5a2b;
 }
 
-/* Tablet */
-@media (min-width: 600px) {
-  nav ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+footer p {
+  margin: 0;
+}
+
+/* Mobile-Friendly Layout */
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 1.5em 1em;
+  }
+
+  header h1 {
+    font-size: 1.7em;
+    letter-spacing: 1px;
   }
 
   nav li {
-    border-top: none;
+    display: block;
   }
 
   nav a {
-    padding: 16px 22px;
+    border-bottom: 1px solid #555555;
   }
 
-  .two-column {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-}
-
-/* Desktop */
-@media (min-width: 900px) {
-  header h1 {
-    font-size: 2.4rem;
+  .hero {
+    height: 200px;
   }
 
-  .three-column {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  .hero h2 {
+    font-size: 1.2em;
+    margin: 1em;
+  }
+
+  main {
+    width: 100%;
+    padding: 1em;
+  }
+
+  form {
+    max-width: 100%;
+    padding: 1em;
+  }
+
+  input[type="submit"],
+  input[type="reset"] {
+    width: 100%;
+    margin-right: 0;
   }
 }

@@ -6,6 +6,7 @@
   <title>Contact | Iron Hide Leather Works</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 <header>
@@ -23,6 +24,10 @@
   </ul>
 </nav>
 
+<div class="hero">
+  <h2>Handcrafted Leather Goods</h2>
+</div>
+
 <main>
   <section>
     <h2>Contact Information</h2>
@@ -32,25 +37,29 @@
 
   <section>
     <h2>Custom Order Request</h2>
-    <form>
-      <p>
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name">
-      </p>
 
-      <p>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email">
-      </p>
+    <form method="post" action="#">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
 
-      <p>
-        <label for="details">Custom Order Details:</label><br>
-        <textarea id="details" name="details" rows="5" cols="30"></textarea>
-      </p>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
 
-      <p>
-        <input type="submit" value="Send Request">
-      </p>
+      <label for="walletstyle">Wallet Style:</label>
+      <select id="walletstyle" name="walletstyle">
+        <option value="minimal">Minimal Wallet</option>
+        <option value="bifold">Bifold Wallet</option>
+        <option value="custom">Custom Wallet</option>
+      </select>
+
+      <label for="color">Preferred Leather Color:</label>
+      <input type="text" id="color" name="color" placeholder="Example: black, brown, tan">
+
+      <label for="details">Custom Order Details:</label>
+      <textarea id="details" name="details" placeholder="Describe your custom order request here."></textarea>
+
+      <input type="submit" value="Send Request">
+      <input type="reset" value="Clear Form">
     </form>
   </section>
 </main>
