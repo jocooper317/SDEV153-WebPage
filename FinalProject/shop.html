@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop | Iron Barrel and Hide Leather Works</title>
+  <title>Contact | Iron Barrel and Hide Leather Works</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,7 +14,7 @@
 
   <div class="header-text">
     <h1>Iron Barrel and Hide Leather Works</h1>
-    <p>Handcrafted Leather Goods Shop</p>
+    <p>Contact and Custom Orders</p>
   </div>
 </header>
 
@@ -34,101 +34,88 @@
 
 <main>
   <section>
-    <h2>Available Wallet Styles</h2>
+    <h2>Contact Information</h2>
+    <p>Email: info@ironbarrelhideleatherworks.com</p>
     <p>
-      Browse the handcrafted wallet styles below. Each wallet is made with durable leather,
-      sports-inspired materials, and a handmade finish.
+      Instagram:
+      <a href="https://www.instagram.com/theninjamafia/" target="_blank" rel="noopener noreferrer">
+        @ironbarrelhideleatherworks
+      </a>
+    </p>
+  </section>
+
+  <section>
+    <h2>Custom Order Request</h2>
+    <p>
+      Use the form below to provide details about what kind of custom wallet you would like for me to make.
+      I will contact you to discuss the concept, pricing, and timeline.
     </p>
 
-    <table class="shop-table">
-      <tr>
-        <th>Product Image</th>
-        <th>Wallet Style</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>View Product</th>
-      </tr>
+    <form method="get" action="confirmation.html" onsubmit="return processForm();">
+      <img src="CustomOrders.PNG" alt="Custom leather wallet order example" class="form-image">
 
-      <tr>
-        <td>
-          <img src="MinimalWallet1-Demo.PNG" alt="Minimal handcrafted leather wallet" class="product-img">
-        </td>
-        <td>Minimal Wallet</td>
-        <td>
-          A slim everyday wallet designed for carrying cards and cash without extra bulk. Made from a old college football.
-        </td>
-        <td>$60.00</td>
-        <td>
-          <a href="product1.html" class="button-link">View</a>
-        </td>
-      </tr>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
 
-      <tr>
-        <td>
-          <img src="MinimalWallet2-Demo.PNG" alt="Minimal handcrafted leather wallet" class="product-img">
-        </td>
-        <td>Minimal Wallet</td>
-        <td>
-          A slim everyday wallet designed for carrying cards and cash without extra bulk. Made from a old Winners Choice baseball glove. 
-        </td>
-        <td>$60.00</td>
-        <td>
-          <a href="product2.html" class="button-link">View</a>
-        </td>
-      </tr>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
 
+      <label for="walletstyle">Wallet Style:</label>
+      <select id="walletstyle" name="walletstyle">
+        <option value="minimal">Minimal Wallet</option>
+        <option value="bifold">Bifold Wallet</option>
+        <option value="custom">Custom Wallet</option>
+      </select>
 
-      <tr>
-        <td>
-          <img src="BifoldWallet-Demo.PNG" alt="Bifold handcrafted leather wallet" class="product-img">
-        </td>
-        <td>Bifold Wallet</td>
-        <td>
-          A classic folding wallet with room for cards, cash, and custom leather details.
-        </td>
-        <td>$100.00</td>
-        <td>
-          <a href="product3.html" class="button-link">View</a>
-        </td>
-      </tr>
+      <label for="color">Preferred Leather Color:</label>
+      <input type="text" id="color" name="color" placeholder="Example: black, brown, tan">
 
-      <tr>
-        <td>
-          <img src="CustomOrders.PNG" alt="Custom handcrafted sports leather wallet" class="product-img">
-        </td>
-        <td>Custom Wallet</td>
-        <td>
-          A made-to-order wallet using custom leather colors and repurposed sports materials.
-        </td>
-        <td>Starting at $150.00</td>
-        <td>
-          <a href="contact.html" class="button-link">Request Custom Order</a>
-        </td>
-      </tr>
+      <label for="sport">Preferred Sports Material:</label>
+      <input type="text" id="sport" name="sport" placeholder="Example: football, baseball, hockey">
 
-      <tr>
-        <td>
-          <img src="LeatherToolsStartKit.PNG" alt="Beginner's Leather Tools Kit" class="product-img">
-        </td>
-        <td>Amazon Leather Tools Kit</td>
-        <td>
-        This professional leather tooling kit is meticulously curated by master craftsmen, featuring oversized
-        cutting mats and engraving mats to protect your workspace. Everything you need for carving, stamping, 
-        and stitching is organized in a custom, portable handbag. This ultimate leather working 
-        kit empowers both beginners and pros to create anywhere, turning any space into a professional studio.
-        </td>
-        <td>$128.99</td>
-        <td>
-          <a href="https://a.co/d/0basjcMr" class="button-link">Amazon Link</a>
-        </td>
-      </tr>
-    </table>
+      <label for="details">Custom Order Details:</label>
+      <textarea id="details" name="details" placeholder="Describe your custom order request here."></textarea>
+
+      <input type="submit" value="Send Request">
+      <input type="reset" value="Clear Form">
+    </form>
   </section>
 </main>
 
 <footer>
   <p>&copy; 2026 Iron Barrel and Hide Leather Works</p>
 </footer>
+
+<script>
+  function processForm() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const walletStyle = document.getElementById("walletstyle").value;
+    const color = document.getElementById("color").value.trim();
+    const sport = document.getElementById("sport").value.trim();
+    const details = document.getElementById("details").value.trim();
+
+    if (name === "" || email === "") {
+      alert("Please enter your name and email before submitting the form.");
+      return false;
+    }
+
+    const orderInfo = {
+      name: name,
+      email: email,
+      walletStyle: walletStyle,
+      color: color,
+      sport: sport,
+      details: details
+    };
+
+    localStorage.setItem("customOrderRequest", JSON.stringify(orderInfo));
+
+    alert("Thank you, " + name + "! Your custom order request has been submitted.");
+
+    return true;
+  }
+</script>
 
 </body>
 </html>
