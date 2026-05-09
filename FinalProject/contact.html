@@ -36,7 +36,12 @@
   <section>
     <h2>Contact Information</h2>
     <p>Email: info@ironbarrelhideleatherworks.com</p>
-    <p>Instagram: <a href="https://www.instagram.com/theninjamafia/" target="_blank" rel="noopener noreferrer">@ironbarrelhideleatherworks</a></p>
+    <p>
+      Instagram:
+      <a href="https://www.instagram.com/theninjamafia/" target="_blank" rel="noopener noreferrer">
+        @ironbarrelhideleatherworks
+      </a>
+    </p>
   </section>
 
   <section>
@@ -46,7 +51,7 @@
       I will contact you to discuss the concept, pricing, and timeline.
     </p>
 
-    <form method="get" action="confirmation.html">
+    <form method="get" action="confirmation.html" onsubmit="return processForm();">
       <img src="CustomOrders.PNG" alt="Custom leather wallet order example" class="form-image">
 
       <label for="name">Name:</label>
@@ -80,6 +85,37 @@
 <footer>
   <p>&copy; 2026 Iron Barrel and Hide Leather Works</p>
 </footer>
+
+<script>
+  function processForm() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const walletStyle = document.getElementById("walletstyle").value;
+    const color = document.getElementById("color").value.trim();
+    const sport = document.getElementById("sport").value.trim();
+    const details = document.getElementById("details").value.trim();
+
+    if (name === "" || email === "") {
+      alert("Please enter your name and email before submitting the form.");
+      return false;
+    }
+
+    const orderInfo = {
+      name: name,
+      email: email,
+      walletStyle: walletStyle,
+      color: color,
+      sport: sport,
+      details: details
+    };
+
+    localStorage.setItem("customOrderRequest", JSON.stringify(orderInfo));
+
+    alert("Thank you, " + name + "! Your custom order request has been submitted.");
+
+    return true;
+  }
+</script>
 
 </body>
 </html>
